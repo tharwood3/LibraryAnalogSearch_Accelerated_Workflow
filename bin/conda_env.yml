@@ -12,3 +12,4 @@ dependencies:
   - pyteomics
   - pip:
       - torch
+      - requests-cache

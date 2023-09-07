@@ -100,7 +100,7 @@ workflow {
     libraries = Channel.fromPath(params.inputlibraries + "/*.mgf" )
     spectra = Channel.fromPath(params.inputspectra + "/**" )
     
-    search_results = searchDataBlink(libraries, spectra)
+    search_results = searchDataBLINK(libraries, spectra)
     
     merged_results = mergeResults(search_results.collect())
 
