@@ -1,9 +1,14 @@
+name: blink
 channels:
-  - conda-forge
+  - bioconda
   - defaults
 dependencies:
-  - python=3.8.8
+  - python=3.7
   - pandas
+  - numpy
+  - scipy
+  - matchms
+  - pymzml
+  - pyteomics
   - pip:
-    - xmltodict
-    - requests
+      - torch

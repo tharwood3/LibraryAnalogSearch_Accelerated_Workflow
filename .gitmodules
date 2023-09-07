@@ -4,3 +4,6 @@
 [submodule "bin/blink"]
 	path = bin/blink
 	url = https://github.com/biorack/blink
+[submodule "GNPS_sharedcode"]
+	path = GNPS_sharedcode
+	url = https://github.com/mwang87/GNPS_sharedcode

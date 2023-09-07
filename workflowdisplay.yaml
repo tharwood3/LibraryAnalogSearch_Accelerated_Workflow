@@ -1,17 +1,31 @@
-name: template_nextflow_workflow
+name: libraryanalogsearch_accelerated_workflow
 displayname: STUFF
 Views:
--   name: Summary List
-    displayname: Summary List
+-   name: Search Results List
+    displayname: Search Results List
     viewname: summarylist
     displaytype: datatable
     parameters:
-        filename: output/summary.tsv
+        filename: nf_output/merged_results_with_gnps.tsv
         columns:
-            -   title: "View LCMS"
-                data: filename
-            -   title: "filename"
-                data: filename
+            -   title: "View Spectra"
+                data: 
+            -   title: "Scan"
+                data: "#Scan#"
+            -   title: "SpectrumFile"
+                data: SpectrumFile
+            -   title: "Compound_Name"
+                data: Compound_Name
+            -   title: "Ion_Source"
+                data: Ion_Source
+            -   title: "Precursor_MZ"
+                data: Precursor_MZ
+            -   title: "MQScore"
+                data: MQScore
+            -   title: "SharedPeaks"
+                data: SharedPeaks
+            -   title: "SpectrumID"
+                data: SpectrumID
         columnDefs: '[ {"targets": 0,"data": null,"render": function ( data, type, row, meta ) {
             return `
             <a target="_blank" href="/dashboards/lcms?usi=mzspec:GNPS2-${task}:${encodeURIComponent(row["filename"])}">View LCMS - mzspec:GNPS2-${task}:${row["filename"]}</a>

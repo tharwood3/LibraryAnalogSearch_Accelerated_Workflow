@@ -1,6 +1,6 @@
-workflowname: template_nextflow_workflow
-workflowdescription: template_nextflow_workflow
-workflowlongdescription: This is a template nextflow workflow for GNPS2
+workflowname: libraryanalogsearch_accelerated_workflow
+workflowdescription: libraryanalogsearch_accelerated_workflow
+workflowlongdescription: Library analog search accelerated with BLINK
 workflowversion: "0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
@@ -12,10 +12,65 @@ parameterlist:
 
     - displayname: Input Data Folder
       paramtype: fileselector
-      nf_paramname: input_spectra_folder
-      formplaceholder: Enter the path to data
+      nf_paramname: inputspectra
+      formplaceholder: Enter the path to search data
       formvalue: ""
-      targettaskfolder: input_spectra
+      targettaskfolder: inputspectra
       optional: false
       selectsinglefile: false
       folderunroll: true
+
+    - displayname: Input Library Folder
+      paramtype: fileselector
+      nf_paramname: inputlibraries
+      formplaceholder: Enter the path to search libraries
+      formvalue: "LIBRARYLOCATION/LC"
+      targettaskfolder: inputlibraries
+      optional: false
+      selectsinglefile: false
+      folderunroll: true
+
+    - displayname: Search Parameters
+      paramtype: section
+
+    - displayname: Ion Mode
+      paramtype: select
+      nf_paramname: blink_ionization
+      formvalue: positive
+      options:
+        - value: positive
+          display: positive
+        - value: negative
+          display: negative
+
+    - displayname: Fragment Ion Tolerance
+      paramtype: text
+      nf_paramname: fragment_tolerance
+      formplaceholder: Enter the fragment_tolerance
+      formvalue: "0.05"
+      tooltip: "fragment_tolerance"
+
+    - displayname: Library Minimum Cosine
+      paramtype: text
+      nf_paramname: library_min_cosine
+      formplaceholder: Enter the library_min_cosine
+      formvalue: "0.7"
+
+    - displayname: Library Minimum Matched Peaks
+      paramtype: text
+      nf_paramname: library_min_matched_peaks
+      formplaceholder: Enter the library_min_matched_peaks
+      formvalue: "6"
+
+    - displayname: Analog Max Shift
+      paramtype: text
+      nf_paramname: analog_max_shift
+      formplaceholder: Enter the analog_max_shift
+      formvalue: "200"
+
+    - displayname: Top-K
+      paramtype: text
+      nf_paramname: topk
+      formplaceholder: Enter the topk
+      formvalue: "1"
+
