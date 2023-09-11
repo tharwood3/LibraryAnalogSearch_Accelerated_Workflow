@@ -3,13 +3,17 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - python=3.7
-  - pandas
+  - python=3
   - numpy
+  - pandas
   - scipy
+  - scikit-learn
+  - seaborn
+  - jupyter
+  - matplotlib
   - matchms
+  - networkx
   - pymzml
   - pyteomics
   - pip:
       - torch
-      - requests-cache
